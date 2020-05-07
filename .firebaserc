@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "alphie-shikwambana"
+  },
+  "targets": {
+    "alphie-shikwambana": {
+      "hosting": {
+        "portfolio": [
+          "alphie-shikwambana"
+        ]
+      }
+    }
   }
 }

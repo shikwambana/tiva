@@ -1,0 +1,81 @@
+<div class="outContainer" fxFlex="100">
+    <mat-tab-group>
+        <mat-tab label="Resume">
+            <div class="inputForm" fxLayout="column" fxLayoutAlign="center center ">
+                <h1>Enter Data</h1>
+                <div fxLayout="column">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput [(ngModel)]="data.title">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput [(ngModel)]="data.description"></textarea>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Company</mat-label>
+                        <input matInput [(ngModel)]="data.company">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Category</mat-label>
+                        <mat-select [(ngModel)]="data.category">
+                            <mat-option *ngFor="let item of categories" value="{{item}}">{{item}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Start Date</mat-label>
+                        <input matInput name="startDate" [(ngModel)]="data.startDate" [matDatepicker]="picker">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>End Date</mat-label>
+                        <input matInput name="endDate" [(ngModel)]="data.endDate" [matDatepicker]="picker1">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Website</mat-label>
+                        <input matInput [(ngModel)]="data.website">
+                    </mat-form-field>
+                    <button mat-raised-button (click)="addData()">Submit</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Work">
+            <div class="inputForm" fxLayout="column" fxLayoutAlign="center center ">
+                <h1>Enter Data</h1>
+                <div fxLayout="column">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Title</mat-label>
+                        <input matInput [(ngModel)]="info.title">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput [(ngModel)]="info.description"></textarea>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Category</mat-label>
+                        <mat-select [(ngModel)]="info.expertise">
+                            <mat-option *ngFor="let item of expertise" value="{{item}}">{{item}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Type</mat-label>
+                        <input matInput [(ngModel)]="info.type">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Website</mat-label>
+                        <input matInput [(ngModel)]="info.website">
+                    </mat-form-field>
+                    <button mat-raised-button (click)="addData('expertise')">Submit</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+
+</div>

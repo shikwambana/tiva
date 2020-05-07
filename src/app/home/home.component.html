@@ -1,18 +1,104 @@
-<div class="homeContainer" fxLayout="row wrap" fxFlex="100">
-    <div class="mainPicture" fxLayout="column wrap" fxFlex="40">
-        <h1>Alphie Shikwambana</h1>
+<div class="homeContainer" fxFill fxLayoutGap="15px" fxLayout="row wrap" fxLayout.xs="column" fxFlex="100">
+    <div class="mainPicture" fxLayout="column" fxFlex="25" fxFlex.xs="100">
+        <h1 style="font-size: 1.5em;">Alphie Shikwambana</h1>
         <img src="../../assets/Alphie.jpeg" style="width: 100%;padding: 15px 0px;" alt="Alphie Shikwambana">
         <div>
-            <mat-accordion>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                </mat-expansion-panel>
-            </mat-accordion>
+            <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
+                <mat-icon>stars</mat-icon>
+                <h4>Spotlight</h4>
+            </div>
+            <div>
+                <a *ngFor="let link of spotlight" href="{{link.link}}" style="text-decoration:none" target="_blank">
+                    <div fxLayout="column" class="spotlight">
+                        <h4 style="margin-bottom: 5px !important;">{{link.title}}</h4>
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                            <p>{{link.type}}</p>
+                            <p>{{link.company}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
+                <mat-icon>stars</mat-icon>
+                <h4>Social Networks</h4>
+            </div>
+            <div fxLayout="row wrap" class="socialContainer">
+                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}"><img style="height: 30px; margin: 0 10px" src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
+            </div>
         </div>
+       
     </div>
-    <div class="category" fxLayout="column wrap" fxFlex="60">
+    <div class="category" fxLayoutGap="10px" fxLayout="column" fxFlex="70" fxFlex.xs="100">
+
+        <div class="sliderControls" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+            <div fxLayoutGap="5px" style="margin: 10px 0;" fxLayoutAlign="start center">
+                <mat-icon>group_work</mat-icon>
+                <h4>My Work</h4>
+            </div>
+
+            <!-- <div fxLayoutAlign="end center">
+                <div>
+                    <mat-icon>arrow_back</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>arrow_forward</mat-icon>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="slider" fxLayout="row" fxLayoutGap="15px" fxFlex="100">
+            <mat-card *ngFor="let item of expertise" class="expertiseCard">
+                <mat-card-header>
+                    <mat-card-title>{{item.title}}</mat-card-title>
+                    <!-- <mat-card-subtitle>Type</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src="{{item.logo}}"
+                    alt="{{item.title}}">
+                <mat-card-content style="max-height: 300px !important;">
+                    <div>
+                        <a *ngFor="let link of item.data" href="{{link.website}}" style="text-decoration:none" target="_blank">
+                            <div fxLayout="column" style="margin: 10px;border-bottom: 1px solid beige;padding: 5px 0;">
+                                <h4 style="margin-bottom: 5px !important;font-weight: 500;font-size: 16px;">{{link.title}}</h4>
+                                <p style="text-align: justify">{{link.description}}</p>
+                                <div fxLayout="row" style="margin: 10px 0;" fxLayoutAlign="space-between center">
+                                    <p style="padding: 5px 10px; background: #424242;border-radius: 5px;">View</p><p><small>Type: </small>{{link.type}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+            </mat-card>
+
+        </div>
+
+        <div class="titleTheme" fxLayoutGap="5px" style="margin: 10px 0;" fxLayoutAlign="start center">
+            <mat-icon>widgets</mat-icon>
+            <h4>Resume</h4>
+        </div>
+
+      
+        <div>
+            <mat-tab-group>
+            <mat-tab label="{{info.title}}" *ngFor="let info of career; let i = index">
+                <div *ngFor="let item of info.info" fxLayoutGap="10px" class="careerItem">
+                    
+                    <h4 style="font-weight: 400;">{{item.title}}</h4>
+                    <h5>Company : {{item.company}}</h5>
+                    <br>
+                    <p>Description : {{item.description}}</p>
+                    <br>
+                    <p>Duration : {{item.startDate | date}} - {{item.endDate | date}}</p>
+                    <br>
+                    <a style="text-decoration: none;" href="{{item.website}}" target="_blank"><p style="color: #008b8b;">Visit Company website</p></a> 
+                    <br>
+                </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
     </div>
 </div>
