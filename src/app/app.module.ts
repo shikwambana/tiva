@@ -8,17 +8,20 @@ import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ExpertiseComponent } from './expertise/expertise.component'; 
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestore } from "@angular/fire/firestore";
-import { environment } from '../environments/environment';
+import { AngularFirestore, AngularFirestoreModule } from "@angular/fire/firestore";
+// import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod'
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { TivaComponent } from './tiva/tiva.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ExpertiseComponent,
-    AdminComponent
+    AdminComponent,
+    TivaComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,9 @@ import { FormsModule } from '@angular/forms';
     MatTabsModule,
     MatButtonModule,
     MatSnackBarModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [AngularFirestore, MatDatepickerModule],
   bootstrap: [AppComponent]

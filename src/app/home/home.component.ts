@@ -7,18 +7,19 @@ import { FirebaseService } from "../firebase.service";
 })
 export class HomeComponent implements OnInit {
 
+  loader: boolean = false;
   history: Array<any>;
   career: Array<any> = [
+    {
+      title: "Stack",
+      info : []
+    },
     {
       title: "Experience",
       info : []
     },
     {
       title: "Volunteering",
-      info : []
-    },
-    {
-      title: "Stack",
       info : []
     },
     {
@@ -29,30 +30,40 @@ export class HomeComponent implements OnInit {
   expertise: Array<any> = [
     {
       title: "Azania Canvass",
+      link: "http://www.azaniacanvas.co.za/",
       type: "",
       logo: "../../assets/azania-canvass.png",
       data: []
     },
     {
       title: "Software Engineering",
+      link: "http://www.alphiecodes.xyz",
       type: "",
       logo: "../../assets/alphiecodes.png",
       data: []
     },
     {
       title: "Entrepreneurship",
+      link: "http://unswerve.tech",
       type: "",
       logo: "../../assets/UNSWERVE.png",
       data: []
     },
     {
       title: "AlphieSpeaks",
+      link: "http://alphiespeaks.co.za",
       type: "",
       logo: "../../assets/alphiespeaksblog.png",
       data: []
     }
   ];
   spotlight: Array<any> = [
+    {
+      title: 'Dear Black Son',
+      type: 'Open Letter',
+      company: 'AlphieSpeaks',
+      link: 'http://alphiespeaks.co.za/open-letter/'
+    },
     {
       title: 'Covid19Cases | Track the Pandemic',
       type: 'Web App',
@@ -103,7 +114,6 @@ export class HomeComponent implements OnInit {
       link: "https://www.facebook.com/alphiespeaks",
       icon: "../../assets/social/facebook.svg"
     }
-
   ]
   
   constructor(private fbService : FirebaseService) { }
@@ -115,7 +125,9 @@ export class HomeComponent implements OnInit {
   }
 
   fetchSkills(){
+    this.loader = true;
     this.fbService.getSkills('skillsandhistory').subscribe((res: Array<any>) =>{
+      this.loader = false;
       console.log(res)
 
       let list = res.map(item =>{
@@ -123,7 +135,7 @@ export class HomeComponent implements OnInit {
         item['endDate'] = item['endDate'].toDate(); 
         return item
       })
-      console.log(list)
+      // console.log(list)
 
       for(var i = 0; i < this.career.length; i++){
         this.career[i]['info'] = list.filter(item =>{
@@ -132,18 +144,28 @@ export class HomeComponent implements OnInit {
       }
 
       console.log(this.career)
+    }, err =>{
+      console.log(err)
+      this.loader = false;
+      alert("Network Error. Try Reloading...")
     })
   }
 
   fetchExpertise(){
+    this.loader = true;
     this.fbService.getSkills('expertise').subscribe((res: Array<any>) =>{
       for(var i = 0; i < this.career.length; i++){
         this.expertise[i]['data'] = res.filter(item =>{
           return this.expertise[i]['title'] == item['expertise']
         })
       }
+      this.loader = false;
 
-      console.log(this.expertise)
+      // console.log(this.expertise)
+    }, err =>{
+      console.log(err)
+      this.loader = false;
+      alert("Network Error. Try Reloading...")
     })
   }
 

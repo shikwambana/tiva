@@ -1,0 +1,49 @@
+.menuList a {
+    padding: 0 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.searchDiv {
+    padding: 30px;
+    background-image: url('../../assets/work.jpg');
+    background-position: bottom;
+}       
+
+
+.searchBox {
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+    width: fit-content;
+    margin: 20px 0;
+}
+
+.searchBox input {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 150px;
+}
+
+.searchBox p {
+    color: black;
+    padding: 0 10px;
+    border: 1px solid;
+    margin: 0 5px !important;
+}
+
+.searchBox button {
+    border: none;
+    background: #55b9f3;
+    color: white;
+    border-radius: 3px;
+}
+
+.listItem {
+    margin-right: 10px !important;
+    border: 1px white solid;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px !important;
+}
