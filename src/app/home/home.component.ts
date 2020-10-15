@@ -115,6 +115,79 @@ export class HomeComponent implements OnInit {
       icon: "../../assets/social/facebook.svg"
     }
   ]
+  tech = [
+    {
+      icon: "../../assets/tech/angular.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/docker.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/sass.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/html5.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/azure.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/firebase.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/github-square.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/wordpress.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/bitbucket.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/cpanel.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/js-square.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/trello.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/linux.svg",
+      name: "",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/sourcetree.svg",
+      name: "",
+      link: ""
+    },
+
+  ]
   
   constructor(private fbService : FirebaseService) { }
 

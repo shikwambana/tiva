@@ -21,12 +21,19 @@
             </div>
             <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
                 <mat-icon>stars</mat-icon>
+                <h4>Technologies I use</h4>
+            </div>
+            <div fxLayout="row" class="socialContainer" style="overflow-x: scroll; max-width: 100%;">
+                <a *ngFor="let social of tech" >
+                    <img class="iconsRow" src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
+            </div>
+            <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
+                <mat-icon>stars</mat-icon>
                 <h4>Social Networks</h4>
             </div>
-            <div fxLayout="row wrap" class="socialContainer">
-                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}"><img
-                        style="height: 30px; margin: 0 10px" src="{{social.icon}}"
-                        alt="{{social.name}} link for alphie"></a>
+            <div fxLayout="row" class="socialContainer">
+                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}">
+                    <img src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
             </div>
         </div>
 

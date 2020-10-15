@@ -69,7 +69,14 @@ p {
     padding-top: 8px;
     background: linear-gradient(145deg, #009595, #007d7d);
     box-shadow: 20px 20px 60px #007676, -20px -20px 60px #00a0a0;
+
+    img {
+      height: 30px; 
+      margin: 5px 10px
+    }
 }
+
+
 
 .mat-card {
     background: transparent;
