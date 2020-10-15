@@ -118,72 +118,72 @@ export class HomeComponent implements OnInit {
   tech = [
     {
       icon: "../../assets/tech/angular.svg",
-      name: "",
+      name: "Angular",
       link: ""
     },
     {
       icon: "../../assets/tech/docker.svg",
-      name: "",
+      name: "Docker",
       link: ""
     },
     {
       icon: "../../assets/tech/sass.svg",
-      name: "",
+      name: "Sass",
       link: ""
     },
     {
       icon: "../../assets/tech/html5.svg",
-      name: "",
+      name: "HTML5",
       link: ""
     },
     {
       icon: "../../assets/tech/azure.svg",
-      name: "",
+      name: "Azure",
       link: ""
     },
     {
       icon: "../../assets/tech/firebase.svg",
-      name: "",
+      name: "Firebase",
       link: ""
     },
     {
       icon: "../../assets/tech/github-square.svg",
-      name: "",
+      name: "GitHub",
       link: ""
     },
     {
       icon: "../../assets/tech/wordpress.svg",
-      name: "",
+      name: "WordPress",
       link: ""
     },
     {
       icon: "../../assets/tech/bitbucket.svg",
-      name: "",
+      name: "Bitbucket",
       link: ""
     },
     {
       icon: "../../assets/tech/cpanel.svg",
-      name: "",
+      name: "CPanel",
       link: ""
     },
     {
       icon: "../../assets/tech/js-square.svg",
-      name: "",
+      name: "JavaScript",
       link: ""
     },
     {
       icon: "../../assets/tech/trello.svg",
-      name: "",
+      name: "Trello",
       link: ""
     },
     {
       icon: "../../assets/tech/linux.svg",
-      name: "",
+      name: "Linux",
       link: ""
     },
     {
       icon: "../../assets/tech/sourcetree.svg",
-      name: "",
+      name: "Source Tree",
       link: ""
     },
 

@@ -20,20 +20,20 @@
                 </a>
             </div>
             <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
-                <mat-icon>stars</mat-icon>
+                <mat-icon>touch_app</mat-icon>
                 <h4>Technologies I use</h4>
             </div>
             <div fxLayout="row" class="socialContainer" style="overflow-x: scroll; max-width: 100%;">
-                <a *ngFor="let social of tech" >
-                    <img class="iconsRow" src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
+                <a *ngFor="let social of tech">
+                    <img class="iconsRow" src="{{social.icon}}" alt="{{social.name}} link for alphie" matTooltip="{{social.name}}"></a>
             </div>
             <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
-                <mat-icon>stars</mat-icon>
+                <mat-icon>group_add</mat-icon>
                 <h4>Social Networks</h4>
             </div>
             <div fxLayout="row" class="socialContainer">
-                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}">
-                    <img src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
+                <a *ngFor="let social of socialNetworks"  target="_blank" href="{{social.link}}">
+                    <img src="{{social.icon}}" alt="{{social.name}} link for alphie" matTooltip="{{social.name}}"></a>
             </div>
         </div>
 
@@ -98,13 +98,13 @@
             
             <a href="mailto:alphie@unswerve.tech" class="btn" target="_blank">
                 <div fxLayout="row"> 
-                <mat-icon>mail</mat-icon><p>alphie@unswerve.tech</p>
+                <mat-icon>mail</mat-icon><p style="padding: 3px;">alphie@unswerve.tech</p>
                 </div>
             </a>
 
             <a href="https://wa.me/27670464770?text=Hey.%20I'm%20interested%20in%20working%20with%20you" class="btn" target="_blank">
                 <div fxLayout="row"> 
-                <mat-icon>call</mat-icon><p>WhatsApp Me</p>
+                <mat-icon>call</mat-icon><p  style="padding: 3px;">WhatsApp Me</p>
                 </div>
             </a>
             <!-- <button mat-button>Submit</button> -->
