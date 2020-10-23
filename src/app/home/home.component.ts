@@ -115,6 +115,79 @@ export class HomeComponent implements OnInit {
       icon: "../../assets/social/facebook.svg"
     }
   ]
+  tech = [
+    {
+      icon: "../../assets/tech/angular.svg",
+      name: "Angular",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/docker.svg",
+      name: "Docker",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/sass.svg",
+      name: "Sass",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/html5.svg",
+      name: "HTML5",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/azure.svg",
+      name: "Azure",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/firebase.svg",
+      name: "Firebase",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/github-square.svg",
+      name: "GitHub",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/wordpress.svg",
+      name: "WordPress",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/bitbucket.svg",
+      name: "Bitbucket",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/cpanel.svg",
+      name: "CPanel",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/js-square.svg",
+      name: "JavaScript",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/trello.svg",
+      name: "Trello",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/linux.svg",
+      name: "Linux",
+      link: ""
+    },
+    {
+      icon: "../../assets/tech/sourcetree.svg",
+      name: "Source Tree",
+      link: ""
+    },
+
+  ]
   
   constructor(private fbService : FirebaseService) { }
 

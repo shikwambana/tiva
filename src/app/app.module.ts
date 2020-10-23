@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatExpansionModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatIconModule, MatTabsModule, MatButtonModule, MatSnackBarModule } from "@angular/material";
+import { MatExpansionModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCardModule, MatIconModule, MatTabsModule, MatButtonModule, MatSnackBarModule, MatTooltipModule } from "@angular/material";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +41,7 @@ import { TivaComponent } from './tiva/tiva.component';
     MatButtonModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatTooltipModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],
