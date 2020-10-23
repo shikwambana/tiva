@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit {
     expertise: ''
   }
 
-  categories = ['Experience', 'Volunteering', 'Education', 'Tech Stack'];
+  categories = ['Experience', 'Volunteering', 'Education', 'Stack'];
   expertise = ['Software Engineering', 'Entrepreneurship', 'AlphieSpeaks', 'Azania Canvass']
   constructor(private fbService: FirebaseService) { }
 

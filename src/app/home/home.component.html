@@ -2,6 +2,7 @@
     <div class="mainPicture" fxLayout="column" fxFlex="25" fxFlex.xs="100">
         <h1 style="font-size: 1.5em;">Alphie Shikwambana</h1>
         <img src="../../assets/Alphie.jpeg" style="width: 100%;padding: 15px 0px;" alt="Alphie Shikwambana">
+        <p>Building Digital Solutions to Real World Problems</p>
         <div>
             <div class="titleTheme" fxLayoutGap="5px" fxLayoutAlign="start center">
                 <mat-icon>stars</mat-icon>
@@ -23,10 +24,12 @@
                 <h4>Social Networks</h4>
             </div>
             <div fxLayout="row wrap" class="socialContainer">
-                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}"><img style="height: 30px; margin: 0 10px" src="{{social.icon}}" alt="{{social.name}} link for alphie"></a>
+                <a *ngFor="let social of socialNetworks" target="_blank" href="{{social.link}}"><img
+                        style="height: 30px; margin: 0 10px" src="{{social.icon}}"
+                        alt="{{social.name}} link for alphie"></a>
             </div>
         </div>
-       
+
     </div>
     <div class="category" fxLayoutGap="10px" fxLayout="column" fxFlex="70" fxFlex.xs="100">
 
@@ -41,27 +44,32 @@
                     <mat-icon>arrow_back</mat-icon>
                 </div>
                 <div>
-                    <mat-icon>arrow_forward</mat-icon>
+                    <mat-icon (click)="resume.scrollIntoView({ behavior: 'smooth', block: 'start' })">arrow_forward</mat-icon>
                 </div>
             </div> -->
         </div>
 
         <div class="slider" fxLayout="row" fxLayoutGap="15px" fxFlex="100">
-            <mat-card *ngFor="let item of expertise" class="expertiseCard">
+            <mat-card *ngFor="let item of expertise; let i = index" class="expertiseCard" #cardContent[i]>
                 <mat-card-header>
-                    <mat-card-title>{{item.title}}</mat-card-title>
+                    <mat-card-title>{{item.title}}<a href="{{item.link}}" target="_blank"><mat-icon style="font-size: 15px;">launch</mat-icon></a></mat-card-title>
                     <!-- <mat-card-subtitle>Type</mat-card-subtitle> -->
                 </mat-card-header>
-                <img mat-card-image src="{{item.logo}}"
-                    alt="{{item.title}}">
-                <mat-card-content style="max-height: 300px !important;">
+                <img mat-card-image src="{{item.logo}}" alt="{{item.title}}">
+                <div *ngIf="loader">
+                    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <mat-card-content style="max-height: 300px !important;overflow-y: auto;">
                     <div>
-                        <a *ngFor="let link of item.data" href="{{link.website}}" style="text-decoration:none" target="_blank">
+                        <a *ngFor="let link of item.data" href="{{link.website}}" style="text-decoration:none"
+                            target="_blank">
                             <div fxLayout="column" style="margin: 10px;border-bottom: 1px solid beige;padding: 5px 0;">
-                                <h4 style="margin-bottom: 5px !important;font-weight: 500;font-size: 16px;">{{link.title}}</h4>
+                                <h4 style="margin-bottom: 5px !important;font-weight: 500;font-size: 16px;">
+                                    {{link.title}}</h4>
                                 <p style="text-align: justify">{{link.description}}</p>
                                 <div fxLayout="row" style="margin: 10px 0;" fxLayoutAlign="space-between center">
-                                    <p style="padding: 5px 10px; background: #424242;border-radius: 5px;">View</p><p><small>Type: </small>{{link.type}}</p>
+                                    <p style="padding: 5px 10px; background: #424242;border-radius: 5px;">View</p>
+                                    <p><small>Type: </small>{{link.type}}</p>
                                 </div>
                             </div>
                         </a>
@@ -76,12 +84,35 @@
         </div>
 
         <div class="titleTheme" fxLayoutGap="5px" style="margin: 10px 0;" fxLayoutAlign="start center">
-            <mat-icon>widgets</mat-icon>
-            <h4>Resume</h4>
+            
+            <h4>Work with Alphie</h4>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="15px">
+            
+            <a href="mailto:alphie@unswerve.tech" class="btn" target="_blank">
+                <div fxLayout="row"> 
+                <mat-icon>mail</mat-icon><p>alphie@unswerve.tech</p>
+                </div>
+            </a>
+
+            <a href="https://wa.me/27670464770?text=Hey.%20I'm%20interested%20in%20working%20with%20you" class="btn" target="_blank">
+                <div fxLayout="row"> 
+                <mat-icon>call</mat-icon><p>WhatsApp Me</p>
+                </div>
+            </a>
+            <!-- <button mat-button>Submit</button> -->
         </div>
 
-      
-        <div>
+        <div class="titleTheme" fxLayoutGap="5px" style="margin: 10px 0;" fxLayoutAlign="start center">
+            <mat-icon>widgets</mat-icon>
+            <h4>What I get up to day to day</h4>
+        </div>
+
+
+        <div #resume fxLayout="column">
+            <div *ngIf="loader">
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
             <mat-tab-group>
             <mat-tab label="{{info.title}}" *ngFor="let info of career; let i = index">
                 <div *ngFor="let item of info.info" fxLayoutGap="10px" class="careerItem">
@@ -98,7 +129,41 @@
                 </div>
             </mat-tab>
           </mat-tab-group>
-        </div>
+            <!-- <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="15px" fxFlex="100">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Name</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Surname</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput type="email">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="15px" fxFlex="100">
+                <mat-form-field appearance="legacy">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput type="number">
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Organisation</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <mat-form-field appearance="legacy">
+                    <mat-label>City of Residence</mat-label>
+                    <input matInput>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayout.xs="column" fxFlex="100">
+                <mat-form-field appearance="legacy" [ngStyle.gt-xs]="{'width': '48%'}">
+                    <mat-label>How can I help?</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+            </div>
+        </div> -->
 
     </div>
 </div>
