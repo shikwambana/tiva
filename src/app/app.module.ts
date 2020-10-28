@@ -13,7 +13,9 @@ import { AngularFirestore, AngularFirestoreModule } from "@angular/fire/firestor
 import { environment } from '../environments/environment.prod'
 import { AdminComponent } from './admin/admin.component';
 import { FormsModule } from '@angular/forms';
-import { TivaComponent } from './tiva/tiva.component'; 
+import { TivaComponent } from './tiva/tiva.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component'; 
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TivaComponent } from './tiva/tiva.component';
     HomeComponent,
     ExpertiseComponent,
     AdminComponent,
-    TivaComponent
+    TivaComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

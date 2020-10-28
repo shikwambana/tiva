@@ -2,25 +2,26 @@
 
 html,
 body {
-    height: 100%;
-    background: linear-gradient(145deg, #007d7d, #009595);
-    background-attachment: fixed;
+  height: 100%;
+  background: linear-gradient(145deg, #007d7d, #009595);
+  background-attachment: fixed;
 }
+
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    // background: url("./assets/bg.png");
-    background: linear-gradient(145deg, #007d7d, #009595);
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    font-size: calc(10px + (26 - 14) * ((100vw - 25px) / (1600 - 25)));
-    font-weight: 100;
-    background-attachment: fixed;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  // background: url("./assets/bg.png");
+  background: linear-gradient(145deg, #007d7d, #009595);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  font-size: calc(10px + (26 - 14) * ((100vw - 25px) / (1600 - 25)));
+  font-weight: 100;
+  background-attachment: fixed;
 }
 
 .homeContainer {
-    padding: 20px;
+  padding: 20px;
 }
 
 h1,
@@ -30,142 +31,161 @@ h4,
 h5,
 h6,
 p {
-    margin: 0 !important;
-    color: white;
-    font-weight: 100;
+  margin: 0 !important;
+  color: white;
+  font-weight: 100;
 }
 
 .slider {
-    overflow-x: scroll;
-    padding: 15px;
+  overflow-x: scroll;
+  padding: 15px;
 }
 
 .expertiseCard {
-    min-width: 250px;
+  min-width: 250px;
 }
 
 .mat-icon {
-    color: white;
+  color: white;
 }
 
 .titleTheme {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .spotlight {
-    padding: 10px;
-    margin: 5px 0;
-    background: #424242;
-    border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+  background: #424242;
+  border-radius: 5px;
 }
 
 .spotlight p {
-    font-size: small;
+  font-size: small;
 }
 
 .socialContainer {
-    padding: 4px;
-    border-radius: 5px;
-    padding-top: 8px;
-    background: linear-gradient(145deg, #009595, #007d7d);
-    box-shadow: 20px 20px 60px #007676, -20px -20px 60px #00a0a0;
+  padding: 4px;
+  border-radius: 5px;
+  padding-top: 8px;
+  background: linear-gradient(145deg, #009595, #007d7d);
+  box-shadow: 20px 20px 60px #007676, -20px -20px 60px #00a0a0;
 
-    img {
-      height: 30px; 
-      margin: 5px 10px
-    }
+  img {
+    height: 30px;
+    margin: 5px 10px
+  }
 }
 
 
 
 .mat-card {
-    background: transparent;
-    // box-shadow: 0px 0px 1px 0px #545151;
-    // box-shadow: 0 0px 5px -1px rgba(0,0,0,.2), 0 0px 1px 0px rgba(0,0,0,.14), 0 0px 3px 0 rgba(0,0,0,.12);
-    background: linear-gradient(145deg, #007d7d, #009595);
-    box-shadow: 20px 20px 60px #007676, -20px -20px 60px #00a0a0;
+  background: transparent;
+  // box-shadow: 0px 0px 1px 0px #545151;
+  // box-shadow: 0 0px 5px -1px rgba(0,0,0,.2), 0 0px 1px 0px rgba(0,0,0,.14), 0 0px 3px 0 rgba(0,0,0,.12);
+  background: linear-gradient(145deg, #007d7d, #009595);
+  box-shadow: 20px 20px 60px #007676, -20px -20px 60px #00a0a0;
 }
 
 .careerItem {
-    margin: 12px;
-    background: #424242;
-    padding: 8px;
-    border-radius: 5px;
+  margin: 12px;
+  background: #424242;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .careerItem p {
-    font-size: small;
+  font-size: small;
 }
 
 .mat-tab-group.mat-primary .mat-ink-bar {
-    background-color: white !important;
+  background-color: white !important;
 }
 
 .btn {
-    border-radius: 10px;
-    padding: 18px;
-    background: #005656;
-    // box-shadow: 6px 6px 6px #036d6d, 0px 0px 0px #007b7b;
-    color: white;
-    text-decoration: none;
-    margin: 3px;
+  border-radius: 10px;
+  padding: 18px;
+  background: #005656;
+  // box-shadow: 6px 6px 6px #036d6d, 0px 0px 0px #007b7b;
+  color: white;
+  text-decoration: none;
+  margin: 3px;
 }
 
 //animation
 
 .lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
   }
-  .lds-ellipsis div {
-    position: absolute;
-    top: 33px;
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    background: #fff;
-    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+  100% {
+    transform: scale(1);
   }
-  .lds-ellipsis div:nth-child(1) {
-    left: 8px;
-    animation: lds-ellipsis1 0.6s infinite;
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
   }
-  .lds-ellipsis div:nth-child(2) {
-    left: 8px;
-    animation: lds-ellipsis2 0.6s infinite;
+
+  100% {
+    transform: scale(0);
   }
-  .lds-ellipsis div:nth-child(3) {
-    left: 32px;
-    animation: lds-ellipsis2 0.6s infinite;
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
   }
-  .lds-ellipsis div:nth-child(4) {
-    left: 56px;
-    animation: lds-ellipsis3 0.6s infinite;
+
+  100% {
+    transform: translate(24px, 0);
   }
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }
-  
+}
+
+.header {
+  background: linear-gradient(145deg, #009f9f, #008686);
+  box-shadow: 2px 2px 6px #007f7f,
+    -2px -2px 6px #00abab;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
